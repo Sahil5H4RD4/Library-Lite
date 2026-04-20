@@ -21,10 +21,11 @@ if (useMockAuth) {
     auth: {
       signUp: async ({ email, password, options }) => {
         console.log(`[Mock Auth] Signing up: ${email}`);
+        const mockId = `mock-user-${email.replace(/[^a-zA-Z0-9]/g, "-")}`;
         return {
           data: {
             user: {
-              id: `mock-user-${Date.now()}`,
+              id: mockId,
               email,
               user_metadata: options?.data || {},
               aud: "authenticated",
@@ -34,7 +35,7 @@ if (useMockAuth) {
               access_token: `mock-access-token-${Date.now()}`,
               refresh_token: `mock-refresh-token-${Date.now()}`,
               user: {
-                id: `mock-user-${Date.now()}`,
+                id: mockId,
                 email,
               },
             },
