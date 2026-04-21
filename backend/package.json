@@ -14,9 +14,6 @@
     "db:push": "npx prisma db push",
     "db:studio": "npx prisma studio"
   },
-  "prisma": {
-    "seed": "node prisma/seed-google-books.js"
-  },
   "keywords": [],
   "author": "",
   "license": "ISC",
